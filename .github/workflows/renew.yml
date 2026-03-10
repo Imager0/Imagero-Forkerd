@@ -35,6 +35,9 @@ jobs:
           ANKER_PASSWORD: ${{ secrets.ANKER_PASSWORD }}
           PA_AKEL_USERNAME: ${{ secrets.PA_AKEL_USERNAME }}
           PA_AKEL_PASSWORD: ${{ secrets.PA_AKEL_PASSWORD }}
+          PA_IMAGERO_USERNAME: ${{ secrets.PA_AKEL_USERNAME }}
+          PA_IMAGERO_PASSWORD: ${{ secrets.PA_AKEL_PASSWORD }}
+          
         run: python3 renew_python_anywhere.py
       
       - name: Keep Alive Workflow (Success)
