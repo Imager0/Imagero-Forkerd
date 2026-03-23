@@ -23,6 +23,6 @@ A = [
         "name": "Imagero",
         "username": os.environ.get('PA_IMAGERO_USERNAME'),
         "password": os.environ.get('PA_IMAGERO_PASSWORD'),
-        "dashboard_url": f"https://www.pythonanywhere.com/user/{os.environ.get('A_IMAGERO_USERNAME')}/webapps/"
+        "dashboard_url": f"https://www.pythonanywhere.com/user/{os.environ.get('PA_IMAGERO_USERNAME')}/webapps/"
     }
 ]
