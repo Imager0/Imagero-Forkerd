@@ -119,7 +119,7 @@ def renew(username, password, dashboard_url, account_name):
 if __name__ == "__main__":
     all_success = True
     
-    for account in ACCOUNTS:
+    for account in A:
         print(f"\n{'='*40}\n▶️ Processing account: {account['name']}\n{'='*40}")
         
         success = renew(
