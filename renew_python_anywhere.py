@@ -3,6 +3,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import time
+from Accounts impport ACCOUNTS
 
 for acc in ACCOUNTS:
     if not acc["username"] or not acc["password"]:
