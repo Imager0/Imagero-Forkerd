@@ -10,11 +10,6 @@ except ImportError:
     print("❌ Error: Accounts.py not found!")
     sys.exit(1)
 
-for acc in A:
-    if not acc["username"] or not acc["password"]:
-        print(f"❌ Error: Credentials for {acc['name']} must be set in .env")
-        sys.exit(1)
-
 LOGIN_URL = "https://www.pythonanywhere.com/login/"
 
 def renew(username, password, dashboard_url, account_name):
