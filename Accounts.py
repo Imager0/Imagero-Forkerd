@@ -1,28 +1,18 @@
 import os
 
-A = [
-    {
-        "name": "Slaiz",
-        "username": os.environ.get('PA_USERNAME'),
-        "password": os.environ.get('PA_PASSWORD'),
-        "dashboard_url": f"https://www.pythonanywhere.com/user/{os.environ.get('PA_USERNAME')}/webapps/"
-    },
-    {
-        "name": "Anker",
-        "username": os.environ.get('ANKER_USERNAME'),
-        "password": os.environ.get('ANKER_PASSWORD'),
-        "dashboard_url": f"https://www.pythonanywhere.com/user/{os.environ.get('ANKER_USERNAME')}/webapps/"
-    },
-    {
-        "name": "Akel",
-        "username": os.environ.get('PA_AKEL_USERNAME'),
-        "password": os.environ.get('PA_AKEL_PASSWORD'),
-        "dashboard_url": f"https://www.pythonanywhere.com/user/{os.environ.get('PA_AKEL_USERNAME')}/webapps/"
-    },
-    {
-        "name": "Imagero",
-        "username": os.environ.get('PA_IMAGERO_USERNAME'),
-        "password": os.environ.get('PA_IMAGERO_PASSWORD'),
-        "dashboard_url": f"https://www.pythonanywhere.com/user/{os.environ.get('PA_IMAGERO_USERNAME')}/webapps/"
+def create_account(name, env_prefix):
+    user = os.environ.get(f'{env_prefix}_USERNAME')
+    return {
+        "name": name,
+        "username": user,
+        "password": os.environ.get(f'{env_prefix}_PASSWORD'),
+        "dashboard_url": f"https://www.pythonanywhere.com/user/{user}/webapps/"
     }
+
+# Теперь список выглядит очень аккуратно:
+A = [
+    create_account("Slaiz", "PA"),
+    create_account("Anker", "ANKER"),
+    create_account("Akel", "PA_AKEL"),
+    create_account("Imagero", "PA_IMAGERO")
 ]
