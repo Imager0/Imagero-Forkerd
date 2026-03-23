@@ -122,21 +122,25 @@ def renew(username, password, dashboard_url, account_name):
         return False
 
 if __name__ == "__main__":
-    all_success = True
+    print(f"🚀 Starting renewal for {len(A)} accounts...")
+    summary = []
     
     for account in A:
-        print(f"\n{'='*40}\n▶️ Processing account: {account['name']}\n{'='*40}")
-        
-        success = renew(
-            username=account['username'], 
-            password=account['password'], 
-            dashboard_url=account['dashboard_url'],
-            account_name=account['name']
+        print(f"\n{'-'*30}")
+        res = renew(
+            username=account.get('username'), 
+            password=account.get('password'), 
+            dashboard_url=account.get('dashboard_url'),
+            account_name=account.get('name')
         )
-        
-        if not success:
-            all_success = False
-            
-        time.sleep(2)
-        
-    sys.exit(0 if all_success else 1)
+        summary.append((account.get('name'), res))
+        time.sleep(3)
+    
+    print(f"\n{'='*30}\nRESULTS:")
+    all_ok = True
+    for name, status in summary:
+        icon = "✅" if status else "❌"
+        if not status: all_ok = False
+        print(f"{icon} {name}")
+    
+    sys.exit(0 if all_ok else 1)
