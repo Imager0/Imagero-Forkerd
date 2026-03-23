@@ -38,7 +38,7 @@ jobs:
           PA_IMAGERO_USERNAME: ${{ secrets.PA_IMAGERO_USERNAME }}
           PA_IMAGERO_PASSWORD: ${{ secrets.PA_IMAGERO_PASSWORD }}
           
-        run: python3 renew_python_anywhere.py
+        run: python3 RewritedFork.py
       
       - name: Keep Alive Workflow (Success)
         if: success()
