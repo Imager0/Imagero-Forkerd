@@ -127,14 +127,24 @@ if __name__ == "__main__":
     
     for account in A:
         user = account.get('username')
-        auto_dashboard_url = f"https://www.pythonanywhere.com/user/{user}/webapps/"
+        auto_url = f"https://www.pythonanywhere.com/user/{user.lower()}/webapps/"
         
         print(f"\n{'-'*30}")
         res = renew(
             username=user, 
             password=account.get('password'), 
-            dashboard_url=auto_dashboard_url,
+            dashboard_url=auto_url,
             account_name=account.get('name')
         )
         summary.append((account.get('name'), res))
         time.sleep(3)
+    
+    
+
+    print(f"\n{'='*30}\nRESULTS:")
+    all_ok = True
+    for name, status in summary:
+        icon = "✅" if status else "❌"
+        if not status: all_ok = False
+        print(f"{icon} {name}")
+    sys.exit(0 if all_ok else 1)
