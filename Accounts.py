@@ -8,8 +8,6 @@ def create_account(name, env_prefix):
         "password": os.environ.get(f'{env_prefix}_PASSWORD'),
         "dashboard_url": f"https://www.pythonanywhere.com/user/{user}/webapps/"
     }
-
-# Теперь список выглядит очень аккуратно:
 A = [
     create_account("Slaiz", "PA"),
     create_account("Anker", "ANKER"),
