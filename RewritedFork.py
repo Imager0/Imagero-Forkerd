@@ -3,7 +3,12 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import time
-from Accounts import A
+
+try:
+    from Accounts import A
+except ImportError:
+    print("❌ Error: Accounts.py not found!")
+    sys.exit(1)
 
 for acc in A:
     if not acc["username"] or not acc["password"]:
