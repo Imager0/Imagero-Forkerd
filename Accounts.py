@@ -1,6 +1,6 @@
 import os
 
-ACCOUNTS = [
+A = [
     {
         "name": "Slaiz",
         "username": os.environ.get('PA_USERNAME'),
