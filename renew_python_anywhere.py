@@ -31,7 +31,7 @@ ACCOUNTS = [
         "name": "Imagero",
         "username": os.environ.get('PA_IMAGERO_USERNAME'),
         "password": os.environ.get('PA_IMAGERO_PASSWORD'),
-        "dashboard_url": "https://www.pythonanywhere.com/user/Imagero/webapps/"
+        "dashboard_url": "https://www.pythonanywhere.com/user/imagero/webapps/"
     }
 ]
 
