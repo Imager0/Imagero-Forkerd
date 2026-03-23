@@ -1,10 +1,13 @@
 import os
 
 def create_acc(name, prefix):
+    # .strip() уберет случайные пробелы, которые могли попасть в Secrets
+    user = (os.environ.get(f'{prefix}_USERNAME') or "").strip()
+    pw = (os.environ.get(f'{prefix}_PASSWORD') or "").strip()
     return {
         "name": name,
-        "username": os.environ.get(f'{prefix}_USERNAME'),
-        "password": os.environ.get(f'{prefix}_PASSWORD'),
+        "username": user,
+        "password": pw
     }
 
 A = [
