@@ -1,16 +1,15 @@
 import os
 
-def create_account(name, env_prefix):
-    user = os.environ.get(f'{env_prefix}_USERNAME')
+def create_acc(name, prefix):
     return {
         "name": name,
-        "username": user,
-        "password": os.environ.get(f'{env_prefix}_PASSWORD'),
-        "dashboard_url": f"https://www.pythonanywhere.com/user/{user}/webapps/"
+        "username": os.environ.get(f'{prefix}_USERNAME'),
+        "password": os.environ.get(f'{prefix}_PASSWORD'),
     }
+
 A = [
-    create_account("Slaiz", "PA"),
-    create_account("Anker", "ANKER"),
-    create_account("Akel", "PA_AKEL"),
-    create_account("Imagero", "PA_IMAGERO")
+    create_acc("Slaiz", "PA"),
+    create_acc("Anker", "ANKER"),
+    create_acc("Akel", "PA_AKEL"),
+    create_acc("Imagero", "PA_IMAGERO")
 ]
