@@ -88,18 +88,23 @@ if __name__ == "__main__":
     summary = []
     
     for account in A:
-        # Принудительно чистим имя и приводим к нижнему регистру для URL
-        user = account['username'].strip()
-        clean_url = f"https://www.pythonanywhere.com/user/{user.lower()}/webapps/"
+        user = account.get('username')
+        auto_url = f"https://www.pythonanywhere.com/user/{user}/webapps/"
         
         print(f"\n{'-'*40}")
-        res = renew(user, account['password'].strip(), clean_url, account['name'])
-        summary.append((account['name'], res))
-        time.sleep(5) # Пауза побольше, чтобы PA не злился
+        res = renew(
+            username=user, 
+            password=account.get('password'), 
+            dashboard_url=auto_url,
+            account_name=account.get('name')
+        )
+        summary.append((account.get('name'), res))
+        time.sleep(5)
     
     print(f"\n{'='*40}\nFINAL RESULTS:")
     all_ok = True
     for name, status in summary:
-        print(f"{'✅' if status else '❌'} {name}")
+        icon = "✅" if status else "❌"
         if not status: all_ok = False
+        print(f"{icon} {name}")
     sys.exit(0 if all_ok else 1)
