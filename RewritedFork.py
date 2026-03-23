@@ -3,9 +3,9 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import time
-from Accounts import ACCOUNTS
+from Accounts import A
 
-for acc in ACCOUNTS:
+for acc in A:
     if not acc["username"] or not acc["password"]:
         print(f"❌ Error: Credentials for {acc['name']} must be set in .env")
         sys.exit(1)
