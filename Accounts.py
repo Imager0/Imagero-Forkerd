@@ -14,5 +14,5 @@ A = [
     create_acc("Anker", "ANKER"),
     create_acc("Akel", "PA_AKEL"),
     create_acc("Imagero", "PA_IMAGERO"),
-    create_acc("SWIP", "SWIP_NAME")
+    create_acc("SWIP", "SWIP")
 ]
