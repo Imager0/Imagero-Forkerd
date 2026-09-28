@@ -37,6 +37,8 @@ jobs:
           PA_AKEL_PASSWORD: ${{ secrets.PA_AKEL_PASSWORD }}
           PA_IMAGERO_USERNAME: ${{ secrets.PA_IMAGERO_USERNAME }}
           PA_IMAGERO_PASSWORD: ${{ secrets.PA_IMAGERO_PASSWORD }}
+          SWIP_NAME: ${{ secrets.SWIP_NAME }}
+          SWIP_PASSWORD: ${{ secrets.SWIP_PASSWORD }}
           
         run: python3 RewritedFork.py
       
